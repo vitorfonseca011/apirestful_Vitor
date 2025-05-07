@@ -1,0 +1,1 @@
+console.log("Esse é o meu primeiro módulo em NODE!")
