@@ -1,5 +1,5 @@
 
-function validacao(nome,idade) {
+function cadastrarUsuario(nome,idade) {
     if (nome == "" || idade <= 0 ) {
         console.log('Nome e idade são obrigatórios para o cadastro!') 
     } else {
@@ -12,6 +12,6 @@ function validacao(nome,idade) {
 
     
 
-module.exports = validacao;
+module.exports = cadastrarUsuario;
 
 
