@@ -1,7 +1,7 @@
 
 function cadastrarUsuario(nome,idade) {
-    if (nome == "" || idade <= 0 ) {
-        console.log('Nome e idade são obrigatórios para o cadastro!') 
+    if (!nome || !idade) {
+        console.log('Erro: Nome ou idade inválidos') 
     } else {
     console.log('Usuário cadastrado com sucesso!')
     console.log('Nome: ' + nome)
