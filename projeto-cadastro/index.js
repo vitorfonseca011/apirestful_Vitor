@@ -1,3 +1,3 @@
 const cadastrarUsuario = require("./controllers/cadastrarUsuario")
 
-cadastrarUsuario(31,31);
+cadastrarUsuario('Vitor',31);
