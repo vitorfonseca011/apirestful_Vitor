@@ -1,7 +1,5 @@
 
 function validacao(nome,idade) {
-    var nome = nome
-    var idade = idade
     if (nome == "" || idade <= 0 ) {
         console.log('Nome e idade são obrigatórios para o cadastro!') 
     } else {
