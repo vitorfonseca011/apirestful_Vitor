@@ -1,27 +1,28 @@
-const express = require('express');
+const express = require ("express")
 
-const app = express();
+const app = express()
 
 app.use(express.json())
 
-app.get('/-', (req, res) => {
-    res.send('Bem-vindo ao servidor Express!')
+app.listen(3003, () => {
+    console.log("O servidor http://localhost:3003 foi ligado")
 })
 
-app.get('/sobre', (req, res) => {
-    res.send('Este é um projeto de exemplo com rotas.')
+app.post("/comprar", (req, res) => {
+    const produto = req.body.produto
+    const quantidade = req.body.quantidade
+    const preco = req.body.preco
+    const total =  req.body.preco * req.body.quantidade
+
+    if (typeof(preco) != "number"|| typeof(quantidade) != "number"|| preco < 0 || quantidade < 0 || !produto)
+        res.send('Dados inválidos')
+    else 
+        res.send('Produto: ' + produto + '\n Total: R$' + total)
+    
 })
 
-app.get('/contato', (req, res) => {
-    res.send('Entre em contato pelo e-mail: seuemail@email.com')
-})
 
-app.post('/usuario', (req, res) => {
-    const nome = req.body.nome
-    const cargo = req.body.cargo
-    res.send('Usuário: ' + nome + '\nCom o cargo: ' + cargo + '\nCadastrado com sucesso!')
-})
 
-app.listen(3002, () => {
-    console.log('Servidor rodando em: http://localhost:3002')
-})
+
+
+
